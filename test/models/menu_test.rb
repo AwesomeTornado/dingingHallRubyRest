@@ -1,6 +1,6 @@
 require "test_helper"
 
-class PlacesControllerTest < ActionDispatch::IntegrationTest
+class MenuTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
