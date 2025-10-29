@@ -11,4 +11,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  # If you wanted to route actions from the `ApiController`, then you would use this:
+  # rest_root :api  # Will find `api_controller` and route the `root` action to '/api'.
+
+  namespace :api do
+    rest_root # Will route `Api::RootController#root` to '/' in this namespace ('/api').
+    resources :root
+    resources :places
+  end
 end

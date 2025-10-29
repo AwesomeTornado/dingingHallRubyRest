@@ -1,8 +1,8 @@
-class Api::RootController < ApplicationController
+class Api::RootController < ApiController
 	self.extra_actions = {test: :get}
 
 	def root
-		renter(
+		render(
 			api:{
 				message: "Welcome to my second Ruby application, and my first Rails one!"
 			},
