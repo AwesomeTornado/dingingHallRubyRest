@@ -1,0 +1,19 @@
+<h1>Add a dining location</h1>
+
+<%= form_with model: @location, url: "create" do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :open %><br>
+    <%= form.text_field :open %>
+  </p>
+  <p>
+    <%= form.label :close %><br>
+    <%= form.text_field :close %>
+  </p>
+  <p>
+    <%= form.submit "Save Location" %>
+  </p>
+<% end %>

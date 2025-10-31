@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
   namespace :api do
     rest_root  # Will route `Api::RootController#root` to '/' in this namespace ('/api').
     rest_resources :location
+    post "location/create" => "rails/location/create"
     rest_resources :menu
     rest_resources :food
   end
