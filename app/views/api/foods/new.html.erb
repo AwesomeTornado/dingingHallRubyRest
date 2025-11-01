@@ -1,0 +1,27 @@
+<h1>Add a meal that can be on a menu</h1>
+
+<%= form_with model: @food, url: api_foods_path do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :calories %><br>
+    <%= form.number_field :calories %>
+  </p>
+  <p>
+    <%= form.label :pork %><br>
+    <%= form.check_box :pork %>
+  </p>
+  <p>
+    <%= form.label :vegan %><br>
+    <%= form.check_box :vegan %>
+  </p>
+  <p>
+    <%= form.label :vegetarian %><br>
+    <%= form.check_box :vegetarian %>
+  </p>
+  <p>
+    <%= form.submit "Save Food" %>
+  </p>
+<% end %>

@@ -18,9 +18,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     rest_root  # Will route `Api::RootController#root` to '/' in this namespace ('/api').
-    rest_resources :location
-    post "location/create" => "rails/location/create"
+    rest_resources :locations
+    rest_resources :foods
     rest_resources :menu
-    rest_resources :food
   end
 end

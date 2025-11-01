@@ -1,6 +1,6 @@
 <h1>Add a dining location</h1>
 
-<%= form_with model: @location, url: "create" do |form| %>
+<%= form_with model: @location, url: api_locations_path do |form| %>
   <p>
     <%= form.label :name %><br>
     <%= form.text_field :name %>

@@ -28,7 +28,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_10_29_193930) do
     t.index ["menu_id", "food_id"], name: "index_foods_menus_on_menu_id_and_food_id"
   end
 
-  create_table "location", force: :cascade do |t|
+  create_table "locations", force: :cascade do |t|
     t.string "close"
     t.datetime "created_at", null: false
     t.string "name"
