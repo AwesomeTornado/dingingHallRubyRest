@@ -20,6 +20,6 @@ Rails.application.routes.draw do
     rest_root  # Will route `Api::RootController#root` to '/' in this namespace ('/api').
     rest_resources :locations
     rest_resources :foods
-    rest_resources :menu
+    rest_resources :menus
   end
 end

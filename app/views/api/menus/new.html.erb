@@ -1,0 +1,11 @@
+<h1>Add a menu</h1>
+
+<%= form_with model: @menu, url: api_menus_path do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.submit "Save Menu" %>
+  </p>
+<% end %>

@@ -3,7 +3,7 @@ class Api::LocationsController < ApiController
 
   self.fields = [:id, :name, :open, :close]
 
-  #self. = [:new, :create, :index, :destroy]
+  self.extra_member_actions = {add_menus: :patch, remove_menus: :patch}
 
   def new
     puts "I'm a real function now!"
@@ -34,5 +34,32 @@ class Api::LocationsController < ApiController
 
   def get_recordset
     Location.all
+  end
+
+  def update
+    super
+  end
+
+  def add_menus
+    menus = params[:menus]
+    location = Location.find params[:id]
+    menus.each do |menu_index|
+      menu = Menu.find(menu_index)
+      unless location.menus.include? menu
+        location.menus << menu
+      end
+    end
+    location.save!
+    render api: location
+  end
+
+  def remove_menus
+    menus = params[:menus]
+    location = Location.find params[:id]
+    menus.each do |menu|
+      location.menus.delete menu
+    end
+    location.save!
+    render api: location
   end
 end

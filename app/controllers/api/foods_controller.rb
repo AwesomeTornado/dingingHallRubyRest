@@ -1,8 +1,6 @@
 class Api::FoodsController < ApiController
   include RESTFramework::ModelControllerMixin
 
-  #self. = [:new, :create, :index, :destroy]
-
   def new
     @food = Food.new
   end
@@ -29,5 +27,9 @@ class Api::FoodsController < ApiController
 
   def get_recordset
     Food.all
+  end
+
+  def update
+    super
   end
 end
